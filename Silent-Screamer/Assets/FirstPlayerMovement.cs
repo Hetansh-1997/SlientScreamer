@@ -38,7 +38,7 @@ public class FirstPlayerMovement : MonoBehaviour
     void updateCameraMovement()
     {
         Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-        currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, moveSmoothTime);
+        currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
         cameraPitch -= currentMouseDelta.y * mouseSensitivity;
         cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
         playerCamera.localEulerAngles = Vector3.right * cameraPitch;
